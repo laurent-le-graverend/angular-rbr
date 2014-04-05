@@ -3,6 +3,7 @@
   "version": "0.1",
   "main": "./angular-rbr.js",
   "dependencies": {
+    "es5-shim": ">=2.0.0",
     "angular": "*"
   }
 }
