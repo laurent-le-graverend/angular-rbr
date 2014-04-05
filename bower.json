@@ -1,0 +1,8 @@
+{
+  "name": "angular-rbr",
+  "version": "0.1",
+  "main": "./angular-rbr.js",
+  "dependencies": {
+    "angular": "*"
+  }
+}
