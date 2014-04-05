@@ -1,9 +1,11 @@
 'use strict'
 
-angular.module('evasionTarotApp').directive "rbr", ->
+angular.module('llg.rbr').directive "rbr", ->
   restrict: "A"
   link: (scope, element, attrs) ->
     # <rbr class="x-small small medium large x-large" data-ranges="[320-380, 1024-1082]">
+    
+    br = document.createElement "br"
 
     break_xs = 480
     break_sm = 768
@@ -20,28 +22,38 @@ angular.module('evasionTarotApp').directive "rbr", ->
     ]
 
     _ranges = []
-    if $(element).attr('data-ranges')
-      _ranges = $(element).attr('data-ranges').replace(RegExp(" ", "g"), "").split ","
+    if element.dataset.ranges
+      _ranges = element.dataset.ranges.replace(RegExp(" ", "g"), "").split ","
 
     addLineBreak = ->
-      return
+      element.appendChild br
 
     removeLineBreak = ->
-      return
+      if element.hasChildNodes()
+        element.removeChild br
 
     resize = () ->
       removeLineBreak()
-      width = $(window).width()
+      viewport = document.documentElement.clientWidth
 
-      _breaks.forEeach (b) ->
-        if width <= b[0]
-          addLineBreak() if b[1].test(element.className)
+      # allows to leave the loop asap
+      needBR = _breaks.some (b) ->
+        if viewport <= b[0]
+          return b[1].test(element.className)
+        return false
 
-      _ranges.forEach (r) ->
-        addLineBreak() if width >= r[0] and width <= r[1]
+      # no need to go more far, we can leave
+      return addLineBreak() if needBR is true
 
-      return
+      needBR = _ranges.some (r) ->
+        values = r.split '-'
+        return viewport >= values[0] and viewport <= values[1]
 
-    $(window).resize ->
+      # no need to go more far, we can leave
+      return addLineBreak() if needBR is true
+
+      return false
+
+    window.addEventListener "resize", (event) ->
       resize()
 
