@@ -3,13 +3,41 @@
 RBR for Responsive Line Breaks
 Add dynmamic line breaks depending of the viewport width!
 
-The origin of this need is is mostly because webkit does not support the CSS property word-break: `"keep-all"` for CJK languages (Chinese, Japanese, Korean).
+The origin of this need is is mostly because webkit does not support the CSS property `word-break: "keep-all"` for CJK languages (Chinese, Japanese, Korean).
 Without `word-break: "keep-all"`, CJK line breaks are cut in the middle of any word, which is a complicated task when it comes to responsive websites.
 
 You do not want your important sentences or titles beeing cut randomly in the middle of a word - or by extensions, somewhere you don't want between words.
 
 ## Install
-The work is ongoing, please wait of fork it!
+
+**The work is ongoing, please wait of fork it!**
+
+Install with `bower`:
+
+```shell
+bower install git://github.com/laurent-le-graverend/angular-rbr.git
+```
+
+Add a `<script>` to your `index.html`:
+
+```html
+<script src="/bower_components/angular-rbr/angular-rbr.js"></script>
+```
+
+And add `llg.rbr` as a dependency for your app:
+
+```javascript
+app = angular.module('myApp', ['llg.rbr']);
+```
+
+## Use
+
+Use the `rbr` element in your html:
+
+```html
+<p>Lorem ipsum do<rbr class="x-small large" data-range="540-700, 1300-1400">lor sit amet</p>
+
+```
 
 ## License
 
