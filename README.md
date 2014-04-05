@@ -32,12 +32,31 @@ app = angular.module('myApp', ['llg.rbr']);
 
 ## Use
 
+### Just markup!
+
 Use the `rbr` element in your html:
 
 ```html
 <p>Lorem ipsum do<rbr class="x-small large" data-range="540-700, 1300-1400">lor sit amet</p>
-
 ```
+
+### Available classes
+
+Each class has three aliases in case if its style is overrided by some of your CSS.
+
+List of classes, and their default viewport value defining when a line break is added:
+
+* `x-small`, `xs`, `rbr-x-small`, `rbr-xs`: 480px
+* `small`, `sm`, `rbr-small`, `rbr-sm`: 768px
+* `medium`, `md`, `rbr-medium`, `rbr-md`: 992px
+* `large`, `lg`, `rbr-large`, `rbr-lg`: 1200px
+* `x-large`, `xl`, `rbr-x-large`, `rbr-xl`: 1300px
+
+## Configure
+
+Allows you to change the default values for the classes defined above.
+
+TODO!
 
 ## License
 
