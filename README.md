@@ -33,17 +33,17 @@ app = angular.module('myApp', ['llg.rbr']);
 
 ## Use
 
-_For performances reasons, **ECMAScript 5** functions are used. Be sure to include the dependency ES5-Shim if you plan to support non ES5 browsers._
+_For performance reasons, **ECMAScript 5** functions are used. Be sure to include the dependency ES5-Shim if you plan to support non ES5 browsers._
 
 ### Just markup!
 
-Use the `rbr` attribute in a normal `br` elment in your html:
+Use the `rbr` attribute in a normal `br` element in your html:
 
 ```html
 <p>Lorem ipsum dolor <br rbr class="x-small large" data-ranges="540-700, 1300-1400">sit amet</p>
 ```
 
-The result of the markup above will trigger a line break when the viewport will match on the the ranges or one of the classes intervals.
+The result of the markup above will trigger a line break when the viewport will match on the ranges or one of the classe intervals.
 
 ### Available classes
 
