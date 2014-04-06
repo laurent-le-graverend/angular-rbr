@@ -1,5 +1,5 @@
 ##
- # angular-rbb
+ # angular-rbr
  # (c) 2014 Laurent Le Graverend http://www.legraverend.fr
  # License: MIT
  ##
@@ -11,10 +11,11 @@ app = angular.module('llg.rbr', [])
 app.directive "rbr", ->
   restrict: "A"
   link: (scope, element, attrs) ->
+    # Example of use:
     # <br rbr class="x-small small medium large x-large" data-ranges="320-380, 1024-1082">
-    
 
     # TODO, this is not optimized to have these variables within the directive
+    # I will find a way to allow override this data in the future
     break_xxs = 320
     break_xs = 480
     break_sm = 768
