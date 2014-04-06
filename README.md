@@ -2,9 +2,9 @@
 
 RBR for **Responsive Line Breaks**.
 
-This module activate and deactivate your line breaks depending of the viewport width!
+This module activates and deactivates your line breaks depending on the viewport width!
 
-The history: The origin of this need is is mostly because webkit does not support the CSS property `word-break: "keep-all"` for CJK languages (Chinese, Japanese, Korean).
+The history: The origin of this need is mostly because webkit does not support the CSS property `word-break: "keep-all"` for CJK languages (Chinese, Japanese, Korean).
 Without `word-break: "keep-all"`, CJK line breaks are cut in the middle of any word, which is a complicated task when it comes to responsive websites.
 
 Having responsive line breaks are a need for any text on any device.
@@ -33,17 +33,17 @@ app = angular.module('myApp', ['llg.rbr']);
 
 ## Use
 
-_For performances reasons, **ECMAScript 5** functions are used. Be sure to include the dependency ES5-Shim if you plan to support non ES5 browsers._
+_For performance reasons, **ECMAScript 5** functions are used. Be sure to include the dependency ES5-Shim if you plan to support non ES5 browsers._
 
 ### Just markup!
 
-Use the `rbr` attribute in a normal `br` elment in your html:
+Use the `rbr` attribute in a normal `br` element in your html:
 
 ```html
 <p>Lorem ipsum dolor <br rbr class="x-small large" data-ranges="540-700, 1300-1400">sit amet</p>
 ```
 
-The result of the markup above will trigger a line break when the viewport will match on the the ranges or one of the classes intervals.
+The result of the markup above will trigger a line break when the viewport will match on the ranges or one of the classe intervals.
 
 ### Available classes
 
