@@ -1,16 +1,17 @@
 # angular-rbr
 
-RBR for Responsive Line Breaks
-Add dynmamic line breaks depending of the viewport width!
+RBR for **Responsive Line Breaks**.
+
+This module adds dynmamic line breaks depending of the viewport width!
 
 The origin of this need is is mostly because webkit does not support the CSS property `word-break: "keep-all"` for CJK languages (Chinese, Japanese, Korean).
 Without `word-break: "keep-all"`, CJK line breaks are cut in the middle of any word, which is a complicated task when it comes to responsive websites.
 
+Having responsive line breaks finally are a need for any text.
+
 You do not want your important sentences or titles beeing cut randomly in the middle of a word - or by extensions, somewhere you don't want between words.
 
 ## Install
-
-**The work is ongoing, please wait of fork it!**
 
 Install with `bower`:
 
@@ -32,12 +33,14 @@ app = angular.module('myApp', ['llg.rbr']);
 
 ## Use
 
+_For performances reasons, **ECMAScript 5** functions are used. Be sure to include the dependency ES5-Shim if you plan to support non ES5 browsers.
+
 ### Just markup!
 
-Use the `rbr` element in your html:
+Use the `rbr` attribute in a normal `br` elment in your html:
 
 ```html
-<p>Lorem ipsum do<rbr class="x-small large" data-range="540-700, 1300-1400">lor sit amet</p>
+<p>Lorem ipsum do<br rbr class="x-small large" data-range="540-700, 1300-1400">lor sit amet</p>
 ```
 
 ### Available classes
@@ -46,11 +49,13 @@ Each class has three aliases in case if its style is overrided by some of your C
 
 List of classes, and their default viewport value defining when a line break is added:
 
-* `x-small`, `xs`, `rbr-x-small`, `rbr-xs`: 480px
-* `small`, `sm`, `rbr-small`, `rbr-sm`: 768px
-* `medium`, `md`, `rbr-medium`, `rbr-md`: 992px
-* `large`, `lg`, `rbr-large`, `rbr-lg`: 1200px
-* `x-large`, `xl`, `rbr-x-large`, `rbr-xl`: 1300px
+* `xx-small`, `xxs`, `rbr-xxs-small`, `rbr-xxs`: 0, 320px
+* `x-small`, `xs`, `rbr-x-small`, `rbr-xs`: 321px, 480px
+* `small`, `sm`, `rbr-small`, `rbr-sm`: 481px, 768px
+* `medium`, `md`, `rbr-medium`, `rbr-md`: 769px, 992px
+* `large`, `lg`, `rbr-large`, `rbr-lg`: 993px, 1200px
+* `x-large`, `xl`, `rbr-x-large`, `rbr-xl`: 1201px, 1440px
+* `xx-large`, `xxl`, `rbr-xx-large`, `rbr-xxl`: 1441px, +++
 
 ## Configure
 
