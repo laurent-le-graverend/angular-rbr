@@ -2,9 +2,9 @@
 
 RBR for **Responsive Line Breaks**.
 
-This module activate and deactivate your line breaks depending of the viewport width!
+This module activates and deactivates your line breaks depending on the viewport width!
 
-The history: The origin of this need is is mostly because webkit does not support the CSS property `word-break: "keep-all"` for CJK languages (Chinese, Japanese, Korean).
+The history: The origin of this need is mostly because webkit does not support the CSS property `word-break: "keep-all"` for CJK languages (Chinese, Japanese, Korean).
 Without `word-break: "keep-all"`, CJK line breaks are cut in the middle of any word, which is a complicated task when it comes to responsive websites.
 
 Having responsive line breaks are a need for any text on any device.
